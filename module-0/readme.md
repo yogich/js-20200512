@@ -2,13 +2,13 @@
 
 ## Материалы из учебника:
 
-#### [Введение](https://learn.javascript.ru/getting-started)  
+### [Введение](https://learn.javascript.ru/getting-started)  
 - [Введение в JavaScript](https://learn.javascript.ru/intro)  
 - [Справочники и спецификации](https://learn.javascript.ru/manuals-specifications)  
 - [Редакторы кода](https://learn.javascript.ru/code-editors)  
 - [Консоль разработчика](https://learn.javascript.ru/devtools)  
     
-#### [Основы JavaScript](https://learn.javascript.ru/first-steps)   
+### [Основы JavaScript](https://learn.javascript.ru/first-steps)   
 - [Переменные](https://learn.javascript.ru/variables)  
 - [Типы данных](https://learn.javascript.ru/types)  
 - [Преобразование типов](https://learn.javascript.ru/type-conversions)  
