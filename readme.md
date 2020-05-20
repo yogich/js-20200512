@@ -22,4 +22,3 @@
 "01-javascript-data-types" - это имя директории модуля  
 "1-sort-strings" - имя директории задачи  
 
-test
