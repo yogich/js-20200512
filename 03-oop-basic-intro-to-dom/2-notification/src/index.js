@@ -1,20 +1,22 @@
 export default class NotificationMessage {
+  static isActive;
+
   constructor(name = 'Some title', {
     duration = 1000,
     type = 'success',
-    target = document.getElementById('root')
-  }) {
+  } = {}) {
+
+    if (NotificationMessage.isActive) {
+        NotificationMessage.isActive.remove();
+    }
+
     this.name = name;
     this.duration = duration;
     this.type = type;
-    this.target = target;
+
     this.render();
-    this.initEventListeners();
   }
 
-  initEventListeners() {
-
-  }
 
   render() {
     const element = document.createElement('div');
@@ -23,17 +25,15 @@ export default class NotificationMessage {
     this.element = element.firstElementChild;
   }
 
-  show() {
-    if(isActive) {
-      this.destroy();
-    }
-
-    this.target.append(this.element);
-    isActive = true;
+  show(target = document.body) {
+    target.append(this.element);
+    NotificationMessage.isActive = this.element;
 
     setTimeout(() => {
       this.destroy();
-    }, this.duration)
+    }, this.duration);
+
+    return this.element;
   }
 
   get template() {
@@ -41,9 +41,7 @@ export default class NotificationMessage {
      <div class="notification ${this.type}" style="--value:${this.duration}ms">
       <div class="timer"></div>
       <div class="inner-wrapper">
-        <div class="notification-header">
-          ${this.type}
-        </div>
+        <div class="notification-header">Notification</div>
         <div class="notification-body">
           ${this.name}
         </div>
@@ -58,8 +56,7 @@ export default class NotificationMessage {
 
   destroy() {
     this.remove();
-    isActive = null;
+    NotificationMessage.isActive = null;
   }
 }
 
-let isActive = false;
